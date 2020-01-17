@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practical_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int kg, km, cost = 0;
+            Console.WriteLine("Enter the Kilo gram :");
+            kg = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the kilo Meter :");
+            km = int.Parse(Console.ReadLine());
+
+            
+            if (km <= 100)
+            {
+                cost = kg * 50;              
+            }
+            else if (km > 100 && km <= 200)
+            {
+                cost = kg * 65;
+            }
+            else if (km > 200 && km <= 300)
+            {
+                cost = kg * 90;
+            }
+            else if (km > 300)
+            {
+                cost = kg * 120;
+            }
+            Console.WriteLine("Total Distance Charge :"+cost);
+            Console.ReadLine();
+        }
+    }
+}
