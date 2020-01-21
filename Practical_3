@@ -1,0 +1,98 @@
+----------------------------------------------------student.cs-----------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practical_3
+{
+    class Student
+    {
+        int Roll_N, i;
+        int[] markssub = new int[3];
+        string name;
+        public char grade;
+        public Student()
+        {
+            Console.WriteLine("Enter roll number");
+            this.Roll_N = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Name ");
+            this.name = Console.ReadLine();
+            while (i <= 2)
+            {
+                Console.WriteLine("Enter sub " + (i + 1) + " marks :");
+                this.markssub[i] = int.Parse(Console.ReadLine());
+                i++;
+            }
+        }
+        public float pg()
+        {
+            int tmarks = markssub[0] + markssub[1] + markssub[2];
+            float per = (float)tmarks / 3;
+            return per;
+        }
+        public char gd()
+        {
+            float per = pg();
+            if (per >= 90)
+            {
+                this.grade = 'A';
+            }
+            else if (per >= 70 && per < 90)
+            {
+                this.grade = 'b';
+            }
+            else if (per >= 35 && per < 70)
+            {
+                this.grade = 'c';
+            }
+            else
+            {
+                this.grade = 'F';
+            }
+            return grade;
+        }
+
+    }
+}
+----------------------------------------------------------program.cs--------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practical_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int no, fn = 0, i = 0;
+            char g;
+            Console.WriteLine("Enter how many student are there");
+            no = int.Parse(Console.ReadLine());
+            Student[] st = new Student[no];
+            while (i < no)
+            {
+                st[i] = new Student();
+                g = st[i].gd();
+                Console.WriteLine("grade are = " + g);
+                if (st[i].gd() == 'F')
+                {
+                    fn++;
+                }
+                i++;
+            }
+            Console.WriteLine("Total students are fail = " + fn + "\nTotal students are pass = " + (no - fn));
+            
+        }
+        }
+        
+
+}
+
+
+
