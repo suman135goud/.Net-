@@ -1,0 +1,39 @@
+--------------------------------------------webform1.aspx----------------------------------------------------------------------------------
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Practical_7.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+       <h1> <asp:Label ID="Label6" runat="server" Text="Registration"></asp:Label></h1>
+    </div>
+        <asp:Label ID="Label1" runat="server" Text="First Name :">  </asp:Label><asp:TextBox ID="fristname" runat="server" Height="19px" Width="151px"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredField" ControlToValidate="fristname" Display="Dynamic">Required</asp:RequiredFieldValidator><br /><br />
+
+        <asp:Label ID="Label3" runat="server" Text="Last Name :">  </asp:Label><asp:TextBox ID="lastname" runat="server" Height="19px" Width="151px"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredField" ControlToValidate="lastname" Display="Dynamic">Required</asp:RequiredFieldValidator><br /><br />
+
+        <asp:Label ID="Label4" runat="server" Text="Password :">  </asp:Label><asp:TextBox ID="password" runat="server" Height="19px" Width="151px" TextMode="Password"></asp:TextBox><br /><br />
+
+        <asp:Label ID="Label5" runat="server" Text="Comfirm Password :">  </asp:Label><asp:TextBox ID="Con_password" runat="server" Height="19px" Width="151px" TextMode="Password"></asp:TextBox>
+        <asp:comparevalidator ID="Comparevalidator1" runat="server" errormessage="CompareValidator" ControlToCompare="password" ControlToValidate="Con_password" Display="Dynamic">Invalid</asp:comparevalidator><br /><br />
+        
+        <asp:Label ID="Label7" runat="server" Text="E-Mail Id :"></asp:Label> <asp:TextBox ID="txmail" runat="server" Height="19px" Width="151px"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txmail">Invaild_id</asp:RegularExpressionValidator><br /><br />
+
+         <asp:Label ID="Label2" runat="server" Text="Age :"></asp:Label> <asp:TextBox ID="txtage" runat="server" Height="19px" Width="151px"></asp:TextBox>
+        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="RangeValidator" ControlToValidate="txtage" MaximumValue="100" MinimumValue="5" Display="Dynamic">please enter age between 1 to 100</asp:RangeValidator><br /><br />
+        
+         <asp:Button ID="Bsubmit" runat="server" Text="Submit" /><br /><br />
+
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ViewStateMode="Enabled" />
+    </form>
+    
+</body>
+
+</html>
