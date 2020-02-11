@@ -27,7 +27,7 @@
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txmail">Invaild_id</asp:RegularExpressionValidator><br /><br />
 
          <asp:Label ID="Label2" runat="server" Text="Age :"></asp:Label> <asp:TextBox ID="txtage" runat="server" Height="19px" Width="151px"></asp:TextBox>
-        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="RangeValidator" ControlToValidate="txtage" MaximumValue="100" MinimumValue="5" Display="Dynamic">please enter age between 1 to 100</asp:RangeValidator><br /><br />
+       <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="RangeValidator" ControlToValidate="txtage" MaximumValue="100" MinimumValue="1" Type="Integer">please enter age between 1 to 100</asp:RangeValidator><br /><br />
         
          <asp:Button ID="Bsubmit" runat="server" Text="Submit" /><br /><br />
 
