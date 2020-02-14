@@ -1,0 +1,34 @@
+-------------------------------------------------program.cs-------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Configuration;
+using System.IO;
+
+namespace Practical_5
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+             string content = File.ReadAllText(@"E:\suman\New folder\prime.txt");
+                Console.WriteLine("Current Content of File");
+                Console.WriteLine("content of file = {0}\n",content);
+                Console.ReadLine();
+            
+            Console.WriteLine("Please Enter New Content For The File");
+           string newcontent = Console.ReadLine();
+           File.WriteAllText("some.txt", newcontent);
+
+           Console.WriteLine("Append the text");
+           string append = Console.ReadLine();
+
+            File.AppendAllText("prime.txt", append + Environment.NewLine);
+            append = Console.ReadLine();
+
+        }
+    }
+}
