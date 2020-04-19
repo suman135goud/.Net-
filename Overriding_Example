@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Overriding_Application
+{
+    class Flowers
+    {
+        public void name()
+        {
+            Console.WriteLine("Rose");
+        }
+    }
+    class Color : Flowers
+    {
+        public void name()
+        {
+            Console.WriteLine("Red");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Flowers c = new Flowers();
+            c.name();
+            c = new Color();
+            c.name();
+            Console.ReadLine();
+
+        }
+    }
+}
