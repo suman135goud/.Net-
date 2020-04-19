@@ -1,0 +1,29 @@
+using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Configuration;
+    using System.Threading.Tasks;
+
+    namespace Assignment_Prog
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {    
+                //if file is alread exist 
+                string content = File.ReadAllText(@"E:\suman\.net\user.txt");
+                Console.WriteLine("Current file =  {0}",content);
+            
+                Console.WriteLine("Enter the name of Person:");//if user file is not exist content are save in this file
+                string name = Console.ReadLine();
+                File.WriteAllText("user.txt", content);//not used when new content are save in this file
+
+                File.AppendAllText("user.txt", name + Environment.NewLine);
+                Console.WriteLine("Succcessful");
+                Console.ReadLine();
+
+            }
+        }
+    }
