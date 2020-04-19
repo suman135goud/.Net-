@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Inheritance_Application
+{
+    class Shape
+    {
+        protected int width, height;
+        protected double pi,radius;
+        
+        public void SetArea_Rect(int h,int w)
+        {
+            height = h;
+            width = w;
+        }
+        public void SetArea_Circle(double p,double r)
+        {
+            pi = p;
+            radius = r;
+        }
+    }
+    class Circle : Shape
+    {
+        public double GetArea_Circle()
+        {
+            return (pi * radius * radius);
+        }
+    }
+    class Rectangle : Shape
+    {
+        public int GetArea_Rect()
+        {
+            return (width * height);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Circle cir = new Circle();
+            cir.SetArea_Circle(3.14,2.1);
+            Console.WriteLine("Total Area of Cricle is :{0}", cir.GetArea_Circle());
+
+            Rectangle rect = new Rectangle();
+            rect.SetArea_Rect(3, 2);
+            Console.WriteLine("Total Area of Rectangle is :{0}", rect.GetArea_Rect());
+            
+            Console.ReadLine();
+        }
+    }
+}
